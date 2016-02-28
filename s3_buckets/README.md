@@ -12,7 +12,7 @@ Add the following to your terraform file. You will need to have the aws vars
 defined as well as replace the bucket value with a comma seperated list of the
 buckets you'd like to create (it will also work with a single bucket).
 
-```
+```hcl
 module "s3_buckets" {
   source = "github.com/spartansystems/terraform-modules//s3_buckets"
   buckets = "first_bucket,second_bucket""
