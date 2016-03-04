@@ -63,3 +63,15 @@ resource "aws_s3_bucket" "b" {
   count = "${length(split(",", var.buckets))}"
   bucket = "${element(split(",", var.buckets), count.index)}"
 }
+
+output "users" {
+  value = "${join(" ", aws_iam_user.s3_users.*.name)}"
+}
+
+output "keys" {
+  value = "${join(" ", aws_iam_access_key.s3_users.*.id)}"
+}
+
+output "secrets" {
+  value = "${join(" ", aws_iam_access_key.s3_users.*.secret)}"
+}
