@@ -16,6 +16,7 @@ buckets you'd like to create (it will also work with a single bucket).
 module "s3_buckets" {
   source = "github.com/spartansystems/terraform-modules//s3_buckets"
   buckets = "first_bucket,second_bucket"
+  iam_user_group_name = "s3_buckets_group"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"
   aws_region = "${var.aws_region}"
